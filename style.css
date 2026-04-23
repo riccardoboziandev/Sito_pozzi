@@ -1,0 +1,209 @@
+/* =============================================
+   VARIABILI — Ottimizzate per un look Premium
+   ============================================= */
+:root {
+  --colore-sfondo:     #fcfcfc; /* Un bianco meno "sparato" */
+  --colore-corpo:      #ffffff;
+  --colore-testo:      #111827; /* Quasi nero, molto leggibile */
+  --colore-testo-muto: #4b5563; /* Grigio medio per i paragrafi */
+  --colore-accento:    #0052cc; /* Blu professionale */
+  --colore-bordo:      #e5e7eb;
+  --colore-card:       #ffffff;
+
+  --font-titoli: 'IBM Plex Mono', monospace;
+  --font-testo:  'IBM Plex Sans', sans-serif;
+
+  --larghezza-max: 800px;
+  --raggio:        12px; /* Angoli leggermente più morbidi */
+}
+
+/* =============================================
+   RESET E BASE
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--colore-sfondo);
+  color: var(--colore-testo);
+  font-family: var(--font-testo);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =============================================
+   NAVIGAZIONE
+   ============================================= */
+nav {
+  position: sticky;
+  top: 0;
+  background-color: rgba(252, 252, 252, 0.8);
+  backdrop-filter: blur(8px); /* Effetto vetro moderno */
+  border-bottom: 1px solid var(--colore-bordo);
+  z-index: 100;
+  padding: 0 32px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  max-width: var(--larghezza-max);
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--colore-testo-muto);
+  font-size: 12px;
+  font-family: var(--font-titoli);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--colore-accento);
+}
+
+/* =============================================
+   LAYOUT PRINCIPALE
+   ============================================= */
+main {
+  max-width: var(--larghezza-max);
+  margin: 0 auto;
+  padding: 0 32px;
+  background-color: var(--colore-corpo);
+  border-left: 1px solid var(--colore-bordo);
+  border-right: 1px solid var(--colore-bordo);
+}
+
+section {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--colore-bordo);
+}
+
+/* =============================================
+   TIPOGRAFIA
+   ============================================= */
+.etichetta {
+  font-family: var(--font-titoli);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--colore-accento);
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: var(--font-titoli);
+  font-size: clamp(32px, 6vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: var(--font-titoli);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--colore-testo-muto);
+  font-weight: 400;
+}
+
+/* =============================================
+   SEZIONE HERO
+   ============================================= */
+#hero .sottotitolo {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--colore-testo);
+}
+
+.tag {
+  background: var(--colore-sfondo);
+  font-weight: 500;
+  border: 1px solid var(--colore-bordo);
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  border-color: var(--colore-accento);
+  color: var(--colore-accento);
+}
+
+/* =============================================
+   COMPETENZE & CARDS
+   ============================================= */
+.competenza-card, .progetto-card, .contatto-riga {
+  background: var(--colore-card);
+  border: 1px solid var(--colore-bordo);
+  border-radius: var(--raggio);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.competenza-card:hover, .progetto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+  border-color: var(--colore-accento);
+}
+
+.barra-contenitore {
+  background: #eee;
+  height: 6px;
+}
+
+/* =============================================
+   TIMELINE & CV
+   ============================================= */
+.cv-blocco-titolo {
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+.cv-riga {
+  transition: background 0.2s ease;
+  padding: 20px 10px;
+  border-radius: 8px;
+}
+
+.cv-riga:hover {
+  background-color: var(--colore-sfondo);
+}
+
+.cv-luogo {
+  font-weight: 500;
+  color: var(--colore-accento);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  background: var(--colore-sfondo);
+  padding: 60px 32px;
+  font-size: 11px;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 600px) {
+  nav ul { gap: 15px; }
+  nav a { font-size: 10px; }
+  main { border: none; padding: 0 20px; }
+  section { padding: 60px 0; }
+}

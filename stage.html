@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Riccardo Bozian — Stage</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="pagina-stage">
 
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
   <nav>
+    <div class="nav-logo">RB<span class="cursor-blink">_</span></div>
     <ul>
       <li><a href="./index.html">Home</a></li>
       <li><a href="index.html#chi-sono">Chi sono</a></li>
@@ -19,77 +23,118 @@
       <li><a href="./index.html#progetti">Progetti</a></li>
       <li><a href="./index.html#percorso">Percorso</a></li>
       <li><a href="./index.html#contatti">Contatti</a></li>
-      <li><a href="./stage.html" class="attivo">Stage</a></li>
+      <li><a href="./stage.html" class="nav-stage-link attivo">Stage</a></li>
     </ul>
   </nav>
 
   <main>
 
+    <!-- INTRO -->
     <section id="intro">
       <p class="etichetta">Esperienze professionali</p>
-      <h1>Percorso di Stage</h1>
+      <h1>Percorso<br><span class="nome-accento">di Stage</span></h1>
       <p>
         Documentazione delle esperienze di Alternanza Scuola-Lavoro svolte durante il triennio.
       </p>
     </section>
 
-    <section id="stage-2">
-      <div class="numero-stage">2</div>
+    <!-- PERCORSO PERSONALE -->
+    <section id="percorso-spirituale" style="padding-bottom: 80px;">
+      <p class="etichetta">Riflessione Personale</p>
+      <h2>Percorso Stage: Tra Sfide e Crescita</h2>
 
-      <div class="scheda-azienda">
-        <div class="scheda-header">
-          <h2>Sviluppo Software ERP</h2>
-          <span class="settore-badge">Sviluppo Software / Consulenza</span>
+      <div class="percorso-container" style="display: flex; flex-direction: column; gap: 32px; background: var(--bg-card); padding: 32px; border-radius: var(--r); border: 1px solid var(--bordo);">
+
+        <div style="text-align: center;">
+          <img src="doc/Gemini_Generated_Image_ky1yfjky1yfjky1y (1).png" alt="Rappresentazione Inferno, Purgatorio, Paradiso" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--bordo);">
+          <p style="font-style: italic; margin-top: 12px; font-size: 13px; color: var(--testo-dim); font-family: var(--font-mono);">"La strada dell'espiazione: dalla teoria alla pratica del software"</p>
         </div>
 
-        <div class="scheda-corpo">
-          <div class="scheda-riga">
-            <span class="scheda-label">Ambito</span>
-            <span class="scheda-valore">Odoo Framework & Business Logic</span>
-          </div>
-          <div class="scheda-riga">
-            <span class="scheda-label">Periodo</span>
-            <span class="scheda-valore">Gennaio 2026 — Febbraio 2026</span>
-          </div>
-          <div class="scheda-riga">
-            <span class="scheda-label">Attività principali</span>
-            <ul class="attivita-lista">
-              <li>Analisi moduli custom per processi aziendali</li>
-              <li>Studio dell'architettura Odoo e dei modelli dati</li>
-              <li>Sperimentazione pratica su logiche backend</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        <div>
+          <h3 style="margin-bottom: 16px;">Il significato del mio percorso</h3>
+          <p style="margin-bottom: 28px;">
+            Il mio cammino in <strong style="color: var(--testo); font-weight: 500;">Immaginazione e Lavoro</strong> è iniziato nel 2024, segnando il passaggio da un mondo puramente teorico a uno finalmente pratico.
+            Come illustrato nel mio disegno, ho diviso questa evoluzione in tre stadi simbolici:
+          </p>
 
-      <div class="relazione-contenitore">
-        <h3>Relazione tecnica</h3>
-        <div class="relazione-testo">
-          <div class="relazione-paragrafo">
-            <p class="para-titolo">Cosa ho fatto</p>
-            <p>
-              L'esperienza si è concentrata sull'apprendimento del sistema ERP Odoo. Ho iniziato con una fase intensiva di teoria sull'architettura del software per poi passare alla creazione di moduli personalizzati per le esigenze specifiche delle aziende clienti.
-            </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">
+
+            <div style="background: var(--bg); border: 1px solid var(--bordo); border-left: 3px solid #e74c3c; border-radius: 8px; padding: 20px;">
+              <h4 style="color: #e74c3c; margin-bottom: 10px; font-family: var(--font-mono); font-size: 14px;">Inferno</h4>
+              <p style="font-size: 13px; line-height: 1.6;">Difficoltà iniziali e problemi comportamentali nel primo anno scolastico.</p>
+            </div>
+
+            <div style="background: var(--bg); border: 1px solid var(--bordo); border-left: 3px solid #f1c40f; border-radius: 8px; padding: 20px;">
+              <h4 style="color: #f1c40f; margin-bottom: 10px; font-family: var(--font-mono); font-size: 14px;">Purgatorio</h4>
+              <p style="font-size: 13px; line-height: 1.6;">Il momento della svolta e della consapevolezza: rimettersi in carreggiata.</p>
+            </div>
+
+            <div style="background: var(--bg); border: 1px solid var(--bordo); border-left: 3px solid var(--accento); border-radius: 8px; padding: 20px;">
+              <h4 style="color: var(--accento); margin-bottom: 10px; font-family: var(--font-mono); font-size: 14px;">Paradiso</h4>
+              <p style="font-size: 13px; line-height: 1.6;">Il presente: la scoperta della passione per il software e uno stato di benessere costante.</p>
+            </div>
+
           </div>
-          <div class="relazione-paragrafo">
-            <p class="para-titolo">Cosa ho imparato</p>
-            <p>
-              Ho acquisito competenze sulla gestione dei flussi di lavoro aziendali tramite software e sulla personalizzazione di piattaforme complesse. È stata un'esperienza fondamentale per comprendere come il software supporti concretamente il business.
-            </p>
+
+          <div style="margin-top: 36px; text-align: center;">
+            <a href="./doc/Il mio percorso scolastico.pdf" download style="display: inline-flex; align-items: center; gap: 10px; background: var(--accento); color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: 500; font-family: var(--font-mono); font-size: 13px; transition: opacity 0.2s; letter-spacing: 0.03em;">
+              📥 Scarica Relazione Completa (PDF)
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="stage-1">
-      <div class="numero-stage">1</div>
+    <!-- STAGE 2 -->
+    <section id="stage-2" style="padding-bottom: 60px;">
+      <div class="numero-stage">02</div>
+      <div class="scheda-azienda">
+        <div class="scheda-header">
+          <h2>Sviluppo Software ERP</h2>
+          <span class="settore-badge">Sviluppo Software / Consulenza</span>
+        </div>
+        <div class="scheda-corpo">
+          <div class="scheda-riga">
+            <span class="scheda-label">Azienda</span>
+            <span class="scheda-valore">ZeroUno SRL</span>
+          </div>
+          <div class="scheda-riga">
+            <span class="scheda-label">Indirizzo</span>
+            <span class="scheda-valore">Via Moncenisio 75, Rozzano (MI)</span>
+          </div>
+          <div class="scheda-riga">
+            <span class="scheda-label">Periodo</span>
+            <span class="scheda-valore">Dal 24/11/2025</span>
+          </div>
+          <div class="scheda-riga">
+            <span class="scheda-label">Tecnologie</span>
+            <span class="scheda-valore" style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <span class="badge">Odoo v16</span>
+              <span class="badge">Docker</span>
+              <span class="badge">Git</span>
+              <span class="badge">Terminale</span>
+            </span>
+          </div>
+          <div class="scheda-riga">
+            <span class="scheda-label">Attività</span>
+            <ul class="attivita-lista">
+              <li>Creazione moduli personalizzati</li>
+              <li>Sviluppo in Docker e Git</li>
+              <li>Analisi business logic aziendale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- STAGE 1 -->
+    <section id="stage-1" style="padding-bottom: 80px;">
+      <div class="numero-stage">01</div>
       <div class="scheda-azienda">
         <div class="scheda-header">
           <h2>DGH LAB</h2>
           <span class="settore-badge">Riparazioni Hardware Mobile</span>
         </div>
-
         <div class="scheda-corpo">
           <div class="scheda-riga">
             <span class="scheda-label">Città</span>
@@ -97,36 +142,41 @@
           </div>
           <div class="scheda-riga">
             <span class="scheda-label">Periodo</span>
-            <span class="scheda-valore">Anno scolastico 2024/2025</span>
+            <span class="scheda-valore">A.S. 2024/2025</span>
           </div>
           <div class="scheda-riga">
             <span class="scheda-label">Attività</span>
             <ul class="attivita-lista">
-              <li>Manutenzione e pulizia tecnica dispositivi</li>
-              <li>Supporto alle operazioni di laboratorio</li>
-              <li>Gestione hardware di base</li>
+              <li>Manutenzione dispositivi mobile</li>
+              <li>Supporto tecnico laboratorio</li>
             </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="relazione-contenitore">
-        <h3>Relazione tecnica</h3>
-        <div class="relazione-testo">
-          <div class="relazione-paragrafo">
-            <p class="para-titolo">Descrizione</p>
-            <p>
-              Durante il periodo presso DGH LAB ho assistito alle operazioni quotidiane di un centro specializzato in riparazioni telefoniche. Mi sono occupato principalmente della preparazione tecnica dei dispositivi e della loro manutenzione estetica e funzionale.
-            </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- DOWNLOAD CV -->
+    <section id="download-cv" style="text-align: center; padding: 80px 0;">
+      <p class="etichetta" style="justify-content: center;">Curriculum Vitae</p>
+      <h2 style="margin-bottom: 12px;">Interessato al mio profilo?</h2>
+      <p style="margin-bottom: 36px; max-width: 400px; margin-left: auto; margin-right: auto;">
+        Scarica il mio Curriculum Vitae aggiornato per maggiori dettagli sulle mie competenze.
+      </p>
+      <a href="./doc/riccardo_bozian_cv.pdf" download style="display: inline-flex; align-items: center; gap: 10px; background: var(--bg-card); color: var(--testo); border: 1px solid var(--bordo-hover); padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: 500; font-family: var(--font-mono); font-size: 13px; transition: all 0.2s; letter-spacing: 0.03em;"
+        onmouseover="this.style.borderColor='var(--accento)'; this.style.color='var(--accento)'"
+        onmouseout="this.style.borderColor='var(--bordo-hover)'; this.style.color='var(--testo)'">
+        📄 Scarica il mio CV (PDF)
+      </a>
+    </section>
+
   </main>
 
   <footer>
-    © 2026 Riccardo Bozian — Portfolio scolastico
+    <div class="footer-inner">
+      <span class="footer-nome">Riccardo Bozian</span>
+      <span class="footer-copy">© 2026 — Portfolio scolastico</span>
+      <a href="./index.html" class="footer-link">← Home</a>
+    </div>
   </footer>
 
 </body>

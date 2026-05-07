@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Riccardo Bozian — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- Decorazione di sfondo -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
   <nav>
+    <div class="nav-logo">RB<span class="cursor-blink">_</span></div>
     <ul>
       <li><a href="#hero">Home</a></li>
       <li><a href="#chi-sono">Chi sono</a></li>
@@ -19,162 +24,278 @@
       <li><a href="#progetti">Progetti</a></li>
       <li><a href="#percorso">Percorso</a></li>
       <li><a href="#contatti">Contatti</a></li>
-      <li><a href="./stage.html">Stage</a></li>
+      <li><a href="./stage.html" class="nav-stage-link">Stage →</a></li>
     </ul>
   </nav>
 
   <main>
 
+    <!-- ====== HERO ====== -->
     <section id="hero">
-      <p class="etichetta">Sviluppatore Junior & Appassionato di Informatica</p>
-      <h1>Riccardo Bozian</h1>
-      <p class="sottotitolo">
-        Studente di informatica focalizzato sulla risoluzione di problemi e sull'apprendimento continuo di nuove tecnologie.
-      </p>
-      <div class="tag-list">
-        <span class="tag">Python</span>
-        <span class="tag">Flutter</span>
-        <span class="tag">Odoo</span>
-        <span class="tag">Hardware</span>
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="etichetta anim-fade" style="--d:0">Sviluppatore Junior & Appassionato di Informatica</p>
+          <h1 class="anim-fade" style="--d:1">Riccardo<br><span class="nome-accento">Bozian</span></h1>
+          <p class="sottotitolo anim-fade" style="--d:2">
+            Studente di informatica focalizzato sulla risoluzione di problemi e sull'apprendimento continuo di nuove tecnologie.
+          </p>
+          <div class="tag-list anim-fade" style="--d:3">
+            <span class="tag">Python</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">Odoo</span>
+            <span class="tag">Hardware</span>
+          </div>
+        </div>
+        <div class="hero-right anim-fade" style="--d:2">
+          <div class="hero-card">
+            <div class="hero-card-line"><span class="hc-key">status</span><span class="hc-val hc-green">● disponibile</span></div>
+            <div class="hero-card-line"><span class="hc-key">città</span><span class="hc-val">Milano, IT</span></div>
+            <div class="hero-card-line"><span class="hc-key">anno</span><span class="hc-val">3° anno</span></div>
+            <div class="hero-card-line"><span class="hc-key">focus</span><span class="hc-val">ERP / Mobile</span></div>
+            <div class="hero-card-divider"></div>
+            <div class="hero-card-line"><span class="hc-key">github</span><span class="hc-val hc-link">riccardobozian</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- ====== CHI SONO ====== -->
     <section id="chi-sono">
       <p class="etichetta">Profilo</p>
       <h2>Informazioni</h2>
-      <p style="margin-top: 16px;">
+      <p class="sezione-intro">
         Frequento il terzo anno presso Immaginazione e Lavoro a Milano. Dedico il mio tempo libero allo studio dell'informatica, approfondendo ciò che ritengo fondamentale per la mia crescita professionale e i linguaggi che più mi appassionano.
       </p>
 
-      <div class="griglia-2col" style="margin-top: 40px;">
-        <div>
-          <div class="info-riga"><span>Città</span><span>Milano</span></div>
-          <div class="info-riga"><span>Lingue</span><span>Italiano, Inglese</span></div>
+      <div class="info-grid">
+        <div class="info-blocco">
+          <span class="info-chiave">Città</span>
+          <span class="info-val">Milano</span>
         </div>
-        <div>
-          <div class="info-riga"><span>Scuola</span><span>Immaginazione e Lavoro</span></div>
-          <div class="info-riga"><span>Indirizzo</span><span>Informatica (3° Anno)</span></div>
+        <div class="info-blocco">
+          <span class="info-chiave">Lingue</span>
+          <span class="info-val">Italiano, Inglese e spagnolo </span>
+        </div>
+        <div class="info-blocco">
+          <span class="info-chiave">Scuola</span>
+          <span class="info-val">Immaginazione e Lavoro</span>
+        </div>
+        <div class="info-blocco">
+          <span class="info-chiave">Indirizzo</span>
+          <span class="info-val">Informatica (3° Anno)</span>
         </div>
       </div>
     </section>
 
+    <!-- ====== COMPETENZE ====== -->
     <section id="competenze">
       <p class="etichetta">Competenze</p>
       <h2>Technical Stack</h2>
       <div class="competenze-griglia">
+
         <div class="competenza-card">
-          <h3>Odoo & ERP</h3>
-          <div class="barra-contenitore"><div class="barra" style="width: 65%"></div></div>
+          <div class="comp-header">
+            <span class="comp-numero">01</span>
+            <h3>Odoo & ERP</h3>
+          </div>
+          <div class="barra-contenitore">
+            <div class="barra" style="width: 45%">
+              <span class="barra-tooltip">45%</span>
+            </div>
+          </div>
           <p class="livello-label">Moduli Custom / Logica Business</p>
         </div>
+
         <div class="competenza-card">
-          <h3>Python</h3>
-          <div class="barra-contenitore"><div class="barra" style="width: 50%"></div></div>
+          <div class="comp-header">
+            <span class="comp-numero">02</span>
+            <h3>Python</h3>
+          </div>
+          <div class="barra-contenitore">
+            <div class="barra" style="width: 70%">
+              <span class="barra-tooltip">70%</span>
+            </div>
+          </div>
           <p class="livello-label">Scripting & Logica Terminale</p>
         </div>
+
         <div class="competenza-card">
-          <h3>Sistemi & HW</h3>
-          <div class="barra-contenitore"><div class="barra" style="width: 60%"></div></div>
+          <div class="comp-header">
+            <span class="comp-numero">03</span>
+            <h3>Sistemi & HW</h3>
+          </div>
+          <div class="barra-contenitore">
+            <div class="barra" style="width: 30%">
+              <span class="barra-tooltip">30%</span>
+            </div>
+          </div>
           <p class="livello-label">Manutenzione e Configurazione</p>
         </div>
+
         <div class="competenza-card">
-          <h3>Flutter</h3>
-          <div class="barra-contenitore"><div class="barra" style="width: 40%"></div></div>
+          <div class="comp-header">
+            <span class="comp-numero">04</span>
+            <h3>Flutter</h3>
+          </div>
+          <div class="barra-contenitore">
+            <div class="barra" style="width: 60%">
+              <span class="barra-tooltip">60%</span>
+            </div>
+          </div>
           <p class="livello-label">UI Design Base</p>
         </div>
+
       </div>
     </section>
 
+    <!-- ====== PROGETTI ====== -->
     <section id="progetti">
       <p class="etichetta">Portfolio</p>
       <h2>Progetti Selezionati</h2>
       <div class="progetti-lista">
+
         <div class="progetto-card">
+          <div class="progetto-numero">01</div>
           <div class="progetto-corpo">
-            <h2>Gestore Magazzino Virtuale</h2>
+            <h3>Gestore Magazzino Virtuale</h3>
             <p>Applicazione Python basata su terminale per la gestione di inventari e salvataggio dati persistente.</p>
             <div class="progetto-meta">
               <span class="badge">Python</span>
               <span class="badge">CLI</span>
             </div>
           </div>
+          <div class="progetto-arrow">→</div>
         </div>
+
         <div class="progetto-card">
+          <div class="progetto-numero">02</div>
           <div class="progetto-corpo">
-            <h2>Mobile UI Concept</h2>
+            <h3>Mobile UI Concept</h3>
             <p>Sviluppo di componenti grafiche e card interattive per dispositivi mobile tramite framework Flutter.</p>
             <div class="progetto-meta">
               <span class="badge">Flutter</span>
               <span class="badge">Dart</span>
             </div>
           </div>
+          <div class="progetto-arrow">→</div>
         </div>
+
       </div>
     </section>
 
+    <!-- ====== PERCORSO ====== -->
     <section id="percorso">
       <p class="etichetta">Esperienza</p>
       <h2>Percorso Formativo</h2>
-      
-      <div class="cv-blocco">
-        <p class="cv-blocco-titolo">Esperienze di Stage</p>
-        <div class="cv-riga">
-          <span class="cv-periodo">2026</span>
-          <div class="cv-contenuto">
-            <h3>Sviluppatore Moduli Odoo</h3>
-            <span class="cv-luogo">Stage Formativo</span>
-            <p>Analisi teorica e pratica sullo sviluppo di moduli personalizzati per la gestione aziendale ERP.</p>
-          </div>
-        </div>
-        <div class="cv-riga">
-          <span class="cv-periodo">2025</span>
-          <div class="cv-contenuto">
-            <h3>Tecnico Hardware Jr.</h3>
-            <span class="cv-luogo">DGH LAB — Sesto San Giovanni</span>
-            <p>Supporto alla manutenzione hardware e igienizzazione tecnica di dispositivi mobili.</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="cv-blocco">
-        <p class="cv-blocco-titolo">Istruzione</p>
-        <div class="cv-riga">
-          <span class="cv-periodo">2023 – in corso</span>
-          <div class="cv-contenuto">
-            <h3>Operatore Informatico</h3>
-            <span class="cv-luogo">Immaginazione e Lavoro — Milano</span>
+      <div class="timeline">
+        <div class="tl-gruppo-label">Stage</div>
+
+        <div class="tl-voce">
+          <div class="tl-anno">2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-contenuto">
+            <h3>Sviluppatore Moduli Odoo</h3>
+            <span class="tl-luogo">Stage Formativo · ZeroUno SRL</span>
+            <p>Analisi teorica e pratica sullo sviluppo di moduli personalizzati per la gestione aziendale ERP.</p>
+            <div class="tl-tags">
+              <span class="badge">Odoo v16</span><span class="badge">Docker</span><span class="badge">Git</span>
+            </div>
           </div>
         </div>
-        <div class="cv-riga">
-          <span class="cv-periodo">2020 – 2023</span>
-          <div class="cv-contenuto">
+
+        <div class="tl-voce">
+          <div class="tl-anno">2025</div>
+          <div class="tl-dot"></div>
+          <div class="tl-contenuto">
+            <h3>Tecnico Hardware Jr.</h3>
+            <span class="tl-luogo">DGH LAB · Sesto San Giovanni</span>
+            <p>Supporto alla manutenzione hardware e igienizzazione tecnica di dispositivi mobili.</p>
+            <div class="tl-tags">
+              <span class="badge">Hardware</span><span class="badge">Mobile</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-gruppo-label" style="margin-top:48px">Istruzione</div>
+
+        <div class="tl-voce">
+          <div class="tl-anno">2023–</div>
+          <div class="tl-dot"></div>
+          <div class="tl-contenuto">
+            <h3>Operatore Informatico</h3>
+            <span class="tl-luogo">Immaginazione e Lavoro · Milano</span>
+          </div>
+        </div>
+
+        <div class="tl-voce">
+          <div class="tl-anno">2020</div>
+          <div class="tl-dot"></div>
+          <div class="tl-contenuto">
             <h3>Diploma di Scuola Media</h3>
-            <span class="cv-luogo">Scuola Secondaria Cesalpino</span>
+            <span class="tl-luogo">Scuola Secondaria Cesalpino</span>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ====== CONTATTI ====== -->
     <section id="contatti">
       <p class="etichetta">Contatti</p>
       <h2>Connettiamoci</h2>
       <div class="contatti-lista">
         <a href="https://github.com/riccardobozian" class="contatto-riga" target="_blank">
-          <span class="contatto-icona">GitHub</span>
-          <span>github.com/riccardobozian</span>
+          <span class="contatto-icona">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </span>
+          <span class="contatto-testo">github.com/riccardobozian</span>
+          <span class="contatto-arrow">↗</span>
         </a>
-        <p class="contatto-riga">
-          <span class="contatto-icona">Email</span>
-          <span>riccardobozian@gmail.com</span>
-        </p>
+        <div class="contatto-riga">
+          <span class="contatto-icona">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          </span>
+          <span class="contatto-testo">riccardobozian@immaginazioneelavoro.it</span>
+        </div>
       </div>
     </section>
 
   </main>
 
   <footer>
-    © 2026 Riccardo Bozian — Sviluppatore Junior
+    <div class="footer-inner">
+      <span class="footer-nome">Riccardo Bozian</span>
+      <span class="footer-copy">© 2026 — Sviluppatore Junior</span>
+      <a href="./stage.html" class="footer-link">Stage →</a>
+    </div>
   </footer>
 
+  <script>
+    // Scroll-based active nav
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+      });
+      navLinks.forEach(a => {
+        a.classList.remove('attivo');
+        if (a.getAttribute('href') === `#${current}`) a.classList.add('attivo');
+      });
+    });
+
+    // Intersection observer per animazioni
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.competenza-card, .progetto-card, .tl-voce, .info-blocco').forEach(el => {
+      el.classList.add('fade-on-scroll');
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>

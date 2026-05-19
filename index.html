@@ -74,7 +74,7 @@
         </div>
         <div class="info-blocco">
           <span class="info-chiave">Lingue</span>
-          <span class="info-val">Italiano, Inglese e spagnolo </span>
+          <span class="info-val">Italiano, Inglese</span>
         </div>
         <div class="info-blocco">
           <span class="info-chiave">Scuola</span>
@@ -99,8 +99,8 @@
             <h3>Odoo & ERP</h3>
           </div>
           <div class="barra-contenitore">
-            <div class="barra" style="width: 45%">
-              <span class="barra-tooltip">45%</span>
+            <div class="barra" style="width: 65%">
+              <span class="barra-tooltip">65%</span>
             </div>
           </div>
           <p class="livello-label">Moduli Custom / Logica Business</p>
@@ -112,8 +112,8 @@
             <h3>Python</h3>
           </div>
           <div class="barra-contenitore">
-            <div class="barra" style="width: 70%">
-              <span class="barra-tooltip">70%</span>
+            <div class="barra" style="width: 50%">
+              <span class="barra-tooltip">50%</span>
             </div>
           </div>
           <p class="livello-label">Scripting & Logica Terminale</p>
@@ -125,8 +125,8 @@
             <h3>Sistemi & HW</h3>
           </div>
           <div class="barra-contenitore">
-            <div class="barra" style="width: 30%">
-              <span class="barra-tooltip">30%</span>
+            <div class="barra" style="width: 60%">
+              <span class="barra-tooltip">60%</span>
             </div>
           </div>
           <p class="livello-label">Manutenzione e Configurazione</p>
@@ -138,8 +138,8 @@
             <h3>Flutter</h3>
           </div>
           <div class="barra-contenitore">
-            <div class="barra" style="width: 60%">
-              <span class="barra-tooltip">60%</span>
+            <div class="barra" style="width: 40%">
+              <span class="barra-tooltip">40%</span>
             </div>
           </div>
           <p class="livello-label">UI Design Base</p>
@@ -167,21 +167,58 @@
           <div class="progetto-arrow">→</div>
         </div>
 
-        <div class="progetto-card">
-          <div class="progetto-numero">02</div>
-          <div class="progetto-corpo">
-            <h3>Mobile UI Concept</h3>
-            <p>Sviluppo di componenti grafiche e card interattive per dispositivi mobile tramite framework Flutter.</p>
-            <div class="progetto-meta">
-              <span class="badge">Flutter</span>
-              <span class="badge">Dart</span>
+        <!-- Card Flutter con galleria -->
+        <div class="progetto-card progetto-card--flutter" onclick="apriGalleria()" style="cursor:pointer; flex-direction: column; gap: 0;">
+          <div style="display:flex; align-items:flex-start; gap:24px; width:100%;">
+            <div class="progetto-numero">02</div>
+            <div class="progetto-corpo">
+              <h3>Mobile UI Concept</h3>
+              <p>Sviluppo di componenti grafiche e card interattive per dispositivi mobile tramite framework Flutter.</p>
+              <div class="progetto-meta" style="margin-bottom: 0;">
+                <span class="badge">Flutter</span>
+                <span class="badge">Dart</span>
+              </div>
+            </div>
+            <div class="progetto-arrow" style="align-self:center;">↗</div>
+          </div>
+
+          <!-- Anteprima schermate -->
+          <div class="flutter-preview">
+            <div class="flutter-preview-label">
+              <span class="preview-dot"></span>
+              2 schermate — clicca per ingrandire
+            </div>
+            <div class="flutter-thumbs">
+              <div class="flutter-thumb">
+                <img src="schermata_app_1.png" alt="Chat App — Schermata di benvenuto" loading="lazy">
+                <span class="thumb-overlay">Schermata 1</span>
+              </div>
+              <div class="flutter-thumb">
+                <img src="schermata_app_2.png" alt="Chat App — Schermata principale" loading="lazy">
+                <span class="thumb-overlay">Schermata 2</span>
+              </div>
             </div>
           </div>
-          <div class="progetto-arrow">→</div>
         </div>
 
       </div>
     </section>
+
+    <!-- ====== LIGHTBOX ====== -->
+    <div class="lightbox" id="lightbox" onclick="chiudiLightbox(event)">
+      <button class="lb-close" onclick="chiudiGalleria()">✕</button>
+      <button class="lb-nav lb-prev" onclick="cambiaFoto(-1, event)">‹</button>
+      <div class="lb-content">
+        <div class="lb-phone-frame">
+          <img id="lb-img" src="" alt="">
+        </div>
+        <div class="lb-info">
+          <span id="lb-label" class="lb-label"></span>
+          <span id="lb-counter" class="lb-counter"></span>
+        </div>
+      </div>
+      <button class="lb-nav lb-next" onclick="cambiaFoto(1, event)">›</button>
+    </div>
 
     <!-- ====== PERCORSO ====== -->
     <section id="percorso">
@@ -255,7 +292,7 @@
           <span class="contatto-icona">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
           </span>
-          <span class="contatto-testo">riccardobozian@immaginazioneelavoro.it</span>
+          <span class="contatto-testo">riccardobozian@gmail.com</span>
         </div>
       </div>
     </section>
@@ -271,6 +308,55 @@
   </footer>
 
   <script>
+    // ---- GALLERIA FLUTTER ----
+    const foto = [
+      { src: 'schermata_app_1.png', label: 'Chat App — Schermata di benvenuto' },
+      { src: 'schermata_app_2.png', label: 'Chat App — Schermata principale' },
+    ];
+    let fotoCorrente = 0;
+
+    function apriGalleria(indice = 0) {
+      fotoCorrente = indice;
+      aggiornaLightbox();
+      document.getElementById('lightbox').classList.add('aperto');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function chiudiGalleria() {
+      document.getElementById('lightbox').classList.remove('aperto');
+      document.body.style.overflow = '';
+    }
+
+    function chiudiLightbox(e) {
+      if (e.target === document.getElementById('lightbox')) chiudiGalleria();
+    }
+
+    function cambiaFoto(dir, e) {
+      e.stopPropagation();
+      fotoCorrente = (fotoCorrente + dir + foto.length) % foto.length;
+      aggiornaLightbox();
+    }
+
+    function aggiornaLightbox() {
+      const img = document.getElementById('lb-img');
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.src = foto[fotoCorrente].src;
+        img.onload = () => { img.style.opacity = '1'; };
+        document.getElementById('lb-label').textContent = foto[fotoCorrente].label;
+        document.getElementById('lb-counter').textContent = `${fotoCorrente + 1} / ${foto.length}`;
+      }, 150);
+    }
+
+    document.addEventListener('keydown', e => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('aperto')) return;
+      if (e.key === 'ArrowRight') cambiaFoto(1, { stopPropagation: () => {} });
+      if (e.key === 'ArrowLeft')  cambiaFoto(-1, { stopPropagation: () => {} });
+      if (e.key === 'Escape') chiudiGalleria();
+    });
+
+    // ---- SCROLL NAV ----
     // Scroll-based active nav
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a');

@@ -1,6 +1,6 @@
-/*
+/* =============================================
    VARIABILI
- */
+   ============================================= */
 :root {
   --bg:          #0a0a0f;
   --bg-card:     #111118;
@@ -21,9 +21,9 @@
   --r: 10px;
 }
 
-/*
+/* =============================================
    RESET
-*/
+   ============================================= */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
@@ -37,9 +37,9 @@ body {
   overflow-x: hidden;
 }
 
-/*
+/* =============================================
    SFONDO DECORATIVO
-*/
+   ============================================= */
 .bg-grid {
   position: fixed;
   inset: 0;
@@ -64,9 +64,9 @@ body {
   z-index: 0;
 }
 
-/*
+/* =============================================
    NAV
-*/
+   ============================================= */
 nav {
   position: sticky;
   top: 0;
@@ -129,9 +129,9 @@ nav a.attivo { color: var(--accento); }
   border-color: var(--accento) !important;
 }
 
-/*
+/* =============================================
    MAIN
-*/
+   ============================================= */
 main {
   position: relative;
   z-index: 1;
@@ -146,9 +146,9 @@ section {
 }
 section:last-child { border-bottom: none; }
 
-/*
+/* =============================================
    TIPOGRAFIA
- */
+   ============================================= */
 .etichetta {
   font-family: var(--font-mono);
   font-size: 10px;
@@ -208,9 +208,9 @@ p { color: var(--testo-muto); }
   max-width: 600px;
 }
 
-/*
+/* =============================================
    HERO
-  */
+   ============================================= */
 #hero {
   padding: 120px 0 100px;
   border-bottom: 1px solid var(--bordo);
@@ -296,9 +296,9 @@ p { color: var(--testo-muto); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 
+/* =============================================
    CHI SONO — INFO GRID
-   */
+   ============================================= */
 .info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -332,9 +332,9 @@ p { color: var(--testo-muto); }
   font-weight: 500;
 }
 
-/* 
+/* =============================================
    COMPETENZE
-*/
+   ============================================= */
 .competenze-griglia {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -400,9 +400,9 @@ p { color: var(--testo-muto); }
   letter-spacing: 0.03em;
 }
 
-/*
+/* =============================================
    PROGETTI
- */
+   ============================================= */
 .progetti-lista {
   display: flex;
   flex-direction: column;
@@ -470,9 +470,9 @@ p { color: var(--testo-muto); }
 
 .progetto-meta { display: flex; flex-wrap: wrap; gap: 6px; }
 
-/*
+/* =============================================
    TIMELINE
-*/
+   ============================================= */
 .timeline {
   position: relative;
   padding-left: 0;
@@ -548,9 +548,9 @@ p { color: var(--testo-muto); }
 
 .tl-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
-/*
+/* =============================================
    CONTATTI
- */
+   ============================================= */
 .contatti-lista {
   display: flex;
   flex-direction: column;
@@ -655,6 +655,214 @@ footer {
 .fade-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* =============================================
+   GALLERIA FLUTTER
+   ============================================= */
+.progetto-card--flutter {
+  align-items: stretch !important;
+}
+
+.flutter-preview {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--bordo);
+  width: 100%;
+}
+
+.flutter-preview-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--testo-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preview-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accento);
+  box-shadow: 0 0 8px var(--accento);
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.flutter-thumbs {
+  display: flex;
+  gap: 16px;
+}
+
+.flutter-thumb {
+  position: relative;
+  width: 90px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--bordo-hover);
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+.flutter-thumb:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--accento);
+  box-shadow: 0 8px 24px rgba(79,127,255,0.2);
+}
+
+.flutter-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.thumb-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 12px 4px 6px;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.flutter-thumb:hover .thumb-overlay { opacity: 1; }
+
+/* =============================================
+   LIGHTBOX
+   ============================================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.lightbox.aperto {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lb-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--bordo-hover);
+  color: var(--testo-muto);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lb-close:hover { border-color: var(--accento); color: var(--testo); }
+
+.lb-nav {
+  background: var(--bg-card);
+  border: 1px solid var(--bordo-hover);
+  color: var(--testo);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.lb-nav:hover { border-color: var(--accento); color: var(--accento); }
+
+.lb-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Cornice telefono */
+.lb-phone-frame {
+  position: relative;
+  width: 240px;
+  background: #111;
+  border-radius: 36px;
+  border: 6px solid #2a2a3a;
+  box-shadow:
+    0 0 0 1px #1a1a2a,
+    0 40px 80px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+  overflow: hidden;
+}
+.lb-phone-frame::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #2a2a3a;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.lb-phone-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.15s ease;
+}
+
+.lb-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.lb-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--testo);
+  text-align: center;
+}
+
+.lb-counter {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--testo-dim);
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 640px) {
+  .lb-phone-frame { width: 180px; border-radius: 28px; }
+  .lb-nav { width: 36px; height: 36px; font-size: 22px; }
 }
 
 /* =============================================

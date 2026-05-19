@@ -154,17 +154,30 @@
       <h2>Progetti Selezionati</h2>
       <div class="progetti-lista">
 
-        <div class="progetto-card">
-          <div class="progetto-numero">01</div>
-          <div class="progetto-corpo">
-            <h3>Gestore Magazzino Virtuale</h3>
-            <p>Applicazione Python basata su terminale per la gestione di inventari e salvataggio dati persistente.</p>
-            <div class="progetto-meta">
-              <span class="badge">Python</span>
-              <span class="badge">CLI</span>
+        <div class="progetto-card progetto-card--magazzino" style="flex-direction: column; gap: 0; cursor: pointer;" onclick="apriMagazzino()">
+          <div style="display:flex; align-items:flex-start; gap:24px; width:100%;">
+            <div class="progetto-numero">01</div>
+            <div class="progetto-corpo">
+              <h3>Gestore Magazzino Virtuale</h3>
+              <p>Applicazione Python basata su terminale per la gestione di inventari e salvataggio dati persistente.</p>
+              <div class="progetto-meta" style="margin-bottom:0;">
+                <span class="badge">Python</span>
+                <span class="badge">CLI</span>
+              </div>
             </div>
+            <div class="progetto-arrow" style="align-self:center;">↗</div>
           </div>
-          <div class="progetto-arrow">→</div>
+
+          <!-- Anteprima terminale -->
+          <div class="terminal-preview">
+            <div class="terminal-bar">
+              <span class="tb-dot tb-red"></span>
+              <span class="tb-dot tb-yellow"></span>
+              <span class="tb-dot tb-green"></span>
+              <span class="tb-title">python magazzino.py</span>
+            </div>
+            <img src="schermata_magazzino.png" alt="Schermata terminale Gestore Magazzino" loading="lazy">
+          </div>
         </div>
 
         <!-- Card Flutter con galleria -->
@@ -204,7 +217,20 @@
       </div>
     </section>
 
-    <!-- ====== LIGHTBOX ====== -->
+    <!-- ====== LIGHTBOX MAGAZZINO ====== -->
+    <div class="lightbox lightbox-magazzino" id="lightbox-magazzino" onclick="chiudiMagazzino(event)">
+      <button class="lb-close" onclick="chiudiMagazzino(event)">✕</button>
+      <div class="lb-terminal-wrap">
+        <div class="terminal-bar terminal-bar--lg">
+          <span class="tb-dot tb-red"></span>
+          <span class="tb-dot tb-yellow"></span>
+          <span class="tb-dot tb-green"></span>
+          <span class="tb-title">python magazzino.py</span>
+        </div>
+        <img src="schermata_magazzino.png" alt="Gestore Magazzino Virtuale — terminale" style="display:block; width:100%; border-radius: 0 0 10px 10px;">
+      </div>
+    </div>
+
     <div class="lightbox" id="lightbox" onclick="chiudiLightbox(event)">
       <button class="lb-close" onclick="chiudiGalleria()">✕</button>
       <button class="lb-nav lb-prev" onclick="cambiaFoto(-1, event)">‹</button>
@@ -308,6 +334,17 @@
   </footer>
 
   <script>
+    function apriMagazzino() {
+      document.getElementById('lightbox-magazzino').classList.add('aperto');
+      document.body.style.overflow = 'hidden';
+    }
+    function chiudiMagazzino(e) {
+      if (!e || e.target === document.getElementById('lightbox-magazzino') || e.currentTarget.classList.contains('lb-close')) {
+        document.getElementById('lightbox-magazzino').classList.remove('aperto');
+        document.body.style.overflow = '';
+      }
+    }
+
     // ---- GALLERIA FLUTTER ----
     const foto = [
       { src: 'schermata_app_1.png', label: 'Chat App — Schermata di benvenuto' },

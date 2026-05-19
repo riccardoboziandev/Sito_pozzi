@@ -707,10 +707,10 @@ footer {
   width: 100%;
   height: auto;
   object-fit: cover;
-  max-height: 110px;
+  max-height: 160px;
   object-position: top;
   filter: brightness(0.9);
-  transition: filter 0.2s;
+  transition: max-height 0.3s ease, filter 0.2s;
 }
 .progetto-card--magazzino:hover .terminal-preview img {
   filter: brightness(1);
